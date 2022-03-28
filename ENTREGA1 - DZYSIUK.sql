@@ -1,9 +1,10 @@
 #--PRIMERA ENTREGA DE PROYECTO INTEGRADOR--
 #Alumno: DZYSIUK, Matías Lucas
-#Última modificación: 16/03/2022
+#Última modificación: 28/03/2022
 
 #Creación de la base de datos "prestamos"
 CREATE DATABASE prestamos_personales;
+USE prestamos_personales;
 
 #Creación de tabla clientes
 CREATE TABLE clientes (
@@ -51,12 +52,12 @@ CREATE TABLE modo_pagos (
 #Creación de tabla prestamos
 CREATE TABLE prestamos (
 					id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
-                    id_capital INT,
-                    id_cliente INT,
-                    id_pago INT,
-                    monto INT,
-                    interes INT,
-                    n_cuotas INT,
+                    id_capital INT NOT NULL,
+                    id_cliente INT NOT NULL,
+                    id_pago INT NOT NULL,
+                    monto INT NOT NULL,
+                    interes INT NOT NULL,
+                    n_cuotas INT NOT NULL,
                     refinanciacion BOOL,
                     coment VARCHAR(150),
 					FOREIGN KEY (id_capital)
@@ -73,9 +74,9 @@ CREATE TABLE prestamos (
 #Creación de tabla detalles
 CREATE TABLE detalles (
 					id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
-                    id_prestamo INT,
+                    id_prestamo INT NOT NULL,
                     direccion BOOL,
-                    n_cuota INT,
+                    n_cuota INT NOT NULL,
                     fecha_p DATE,
                     estado BOOL,
                     dent_mes BOOL,
@@ -96,8 +97,29 @@ CREATE TABLE roles (
 #Creación de tabla usuarios
 CREATE TABLE usuarios (
 					id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
-                    id_rol INT,
+                    id_rol INT NOT NULL,
 					FOREIGN KEY (id_rol)
 						REFERENCES roles(id)
 						ON DELETE CASCADE
 );
+
+
+#--DESAFIO INSERCION DE DATOS--
+#Alumno: DZYSIUK, Matías Lucas
+#Última modificación: 28/03/2022
+
+#Inserción de datos en tabla forma de pago
+INSERT INTO modo_pagos VALUES 
+							(NULL,"EFECTIVO"),
+                            (NULL, "MERCADO PAGO");
+
+#Inserción de datos en tabla roles
+INSERT INTO roles VALUES 
+							(NULL,"ADMINISTRADOR"),
+                            (NULL,"VENDEDOR"),
+                            (NULL, "CAPITAL");
+
+#Inserción de datos en tabla usuarios
+INSERT INTO usuarios VALUES 
+							(NULL,1),
+                            (NULL, 2);
