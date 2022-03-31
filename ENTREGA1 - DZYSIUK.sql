@@ -123,3 +123,75 @@ INSERT INTO roles VALUES
 INSERT INTO usuarios VALUES 
 							(NULL,1),
                             (NULL, 2);
+                            
+                            
+#--DESAFIO CREACION DE VISTAS--
+#Alumno: DZYSIUK, Matías Lucas
+#Última modificación: 30/03/2022
+
+/* 1- View que permite conocer cuanto dinero aporto el capital, 
+cuanto dinero se presto y cual es el porcentaje disponible para seguir prestando*/ 
+CREATE OR REPLACE VIEW prestamos_por_capital AS
+SELECT CONCAT(c.nombre, " ", c.apellido) AS CAPITAL,
+	   c.monto AS "MONTO INICIAL [$]",
+       p.monto AS "MONTO PRESTADO [$]",
+       ROUND(((((c.monto - p.monto)/c.monto))*100), 2) AS "DISPONIBLE %"
+FROM prestamos AS p
+INNER JOIN capitales AS c
+	ON p.id_capital = c.id
+GROUP BY CAPITAL
+ORDER BY p.monto DESC;
+
+
+/* 2- View que permite conocer los clientes que mas dinero solicitaron*/ 
+CREATE OR REPLACE VIEW mejores_clientes AS
+SELECT CONCAT(c.nombre, " ", c.apellido) AS CLIENTES,
+	   p.monto AS "MONTO PRESTADO [$]"
+FROM clientes AS c
+INNER JOIN prestamos AS p
+	ON p.id_cliente = c.id
+ORDER BY monto DESC;
+
+
+/* 3- View que permite conocer los clientes que estan activos, es decir,
+ aquellos que pagaron menos cuotas de las que le corresponde*/ 
+CREATE OR REPLACE VIEW clientes_activos AS
+SELECT DISTINCT(p.id_cliente) AS ID,
+	   CONCAT(c.nombre, " ", c.apellido) AS NOMBRE
+FROM prestamos AS p
+RIGHT JOIN detalles AS d
+	ON p.id = d.id_prestamo
+INNER JOIN clientes AS c
+	ON p.id_cliente = c.id
+WHERE p.n_cuotas > d.n_cuota
+ORDER BY id ASC;
+
+/* 4- View que permite conocer cuantas cuotas fueron abonadas por los clientes y cuantas le faltan para cerras su prestamo*/ 
+CREATE OR REPLACE VIEW cuotas_abonadas AS
+SELECT  CONCAT(c.nombre, " ", c.apellido) AS NOMBRE,
+		id_prestamo AS "ID DE PRESTAMO",
+        MAX(d.n_cuota) AS "CUOTAS PAGADAS",
+        (p.n_cuotas-MAX(d.n_cuota)) AS "CUOTAS RESTANTES",
+        p.n_cuotas AS "TOTAL DE CUOTAS"
+FROM detalles AS d
+INNER JOIN prestamos AS p
+	ON d.id_prestamo = p.id
+INNER JOIN clientes AS c
+	ON p.id_cliente = c.id
+GROUP BY id_prestamo;
+
+/* 5- View que permite conocer la ficha de un cliente*/
+CREATE OR REPLACE VIEW ficha_cliente AS
+SELECT  CONCAT(c.nombre, " ", c.apellido) AS NOMBRE,
+		id_prestamo AS "ID DE PRESTAMO",
+        p.monto AS "MONTO PRESTADO [$]",
+        p.interes AS "INTERÉS [%]",
+        p.n_cuotas AS "CUOTA TOTAL",
+        MAX(d.n_cuota) AS "CUOTAS PAGADAS",
+        ROUND((((p.monto * p.interes)/p.n_cuotas)*MAX(d.n_cuota)), 0) AS "MONTO PAGADO [$]"
+FROM detalles AS d
+INNER JOIN prestamos AS p
+	ON d.id_prestamo = p.id
+INNER JOIN clientes AS c
+	ON p.id_cliente = c.id
+GROUP BY id_prestamo;
