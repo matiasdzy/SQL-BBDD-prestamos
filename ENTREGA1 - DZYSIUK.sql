@@ -1,7 +1,7 @@
 #--PRIMERA ENTREGA DE PROYECTO INTEGRADOR--
 #Alumno: DZYSIUK, Matías Lucas
 #Última modificación: 28/03/2022
-
+/*
 #Creación de la base de datos "prestamos"
 CREATE DATABASE prestamos_personales;
 USE prestamos_personales;
@@ -102,12 +102,13 @@ CREATE TABLE usuarios (
 						REFERENCES roles(id)
 						ON DELETE CASCADE
 );
+*/
 
-
+#----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #--DESAFIO INSERCION DE DATOS--
 #Alumno: DZYSIUK, Matías Lucas
 #Última modificación: 28/03/2022
-
+/*
 #Inserción de datos en tabla forma de pago
 INSERT INTO modo_pagos VALUES 
 							(NULL,"EFECTIVO"),
@@ -123,14 +124,15 @@ INSERT INTO roles VALUES
 INSERT INTO usuarios VALUES 
 							(NULL,1),
                             (NULL, 2);
-                            
-                            
+  
+ */ 
+
+#----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #--DESAFIO CREACION DE VISTAS--
 #Alumno: DZYSIUK, Matías Lucas
 #Última modificación: 30/03/2022
-
-/* 1- View que permite conocer cuanto dinero aporto el capital, 
-cuanto dinero se presto y cual es el porcentaje disponible para seguir prestando*/ 
+/*
+# 1- View que permite conocer cuanto dinero aporto el capital, cuanto dinero se presto y cual es el porcentaje disponible para seguir prestando
 CREATE OR REPLACE VIEW prestamos_por_capital AS
 SELECT CONCAT(c.nombre, " ", c.apellido) AS CAPITAL,
 	   c.monto AS "MONTO INICIAL [$]",
@@ -143,7 +145,7 @@ GROUP BY CAPITAL
 ORDER BY p.monto DESC;
 
 
-/* 2- View que permite conocer los clientes que mas dinero solicitaron*/ 
+# 2- View que permite conocer los clientes que mas dinero solicitaron 
 CREATE OR REPLACE VIEW mejores_clientes AS
 SELECT CONCAT(c.nombre, " ", c.apellido) AS CLIENTES,
 	   p.monto AS "MONTO PRESTADO [$]"
@@ -153,8 +155,7 @@ INNER JOIN prestamos AS p
 ORDER BY monto DESC;
 
 
-/* 3- View que permite conocer los clientes que estan activos, es decir,
- aquellos que pagaron menos cuotas de las que le corresponde*/ 
+# 3- View que permite conocer los clientes que estan activos, es decir,aquellos que pagaron menos cuotas de las que le corresponde
 CREATE OR REPLACE VIEW clientes_activos AS
 SELECT DISTINCT(p.id_cliente) AS ID,
 	   CONCAT(c.nombre, " ", c.apellido) AS NOMBRE
@@ -166,7 +167,7 @@ INNER JOIN clientes AS c
 WHERE p.n_cuotas > d.n_cuota
 ORDER BY id ASC;
 
-/* 4- View que permite conocer cuantas cuotas fueron abonadas por los clientes y cuantas le faltan para cerras su prestamo*/ 
+# 4- View que permite conocer cuantas cuotas fueron abonadas por los clientes y cuantas le faltan para cerras su prestamo
 CREATE OR REPLACE VIEW cuotas_abonadas AS
 SELECT  CONCAT(c.nombre, " ", c.apellido) AS NOMBRE,
 		id_prestamo AS "ID DE PRESTAMO",
@@ -180,7 +181,7 @@ INNER JOIN clientes AS c
 	ON p.id_cliente = c.id
 GROUP BY id_prestamo;
 
-/* 5- View que permite conocer la ficha de un cliente*/
+# 5- View que permite conocer la ficha de un cliente
 CREATE OR REPLACE VIEW ficha_cliente AS
 SELECT  CONCAT(c.nombre, " ", c.apellido) AS NOMBRE,
 		id_prestamo AS "ID DE PRESTAMO",
@@ -195,3 +196,49 @@ INNER JOIN prestamos AS p
 INNER JOIN clientes AS c
 	ON p.id_cliente = c.id
 GROUP BY id_prestamo;
+*/
+
+#----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#--DESAFIO CREACION DE FUNCIONES--
+#Alumno: DZYSIUK, Matías Lucas
+#Última modificación: 04/04/2022
+
+/*
+# 1- Funcion para ver cuantos prestamos se cobraron en los ultimos N dias (Ultima fecha 2017 => mas de 1900 dias)
+DROP FUNCTION IF EXISTS prestamos_n_dias;
+DELIMITER $$
+CREATE FUNCTION prestamos_n_dias (N INT)
+RETURNS INT
+READS SQL DATA
+BEGIN
+    DECLARE output INT;
+    SET output = (SELECT COUNT(DISTINCT id) 
+				  FROM detalles
+				  WHERE fecha_p >= DATE_ADD(CURDATE(), INTERVAL -N DAY));
+    RETURN output;
+END $$ 
+DELIMITER ;
+
+
+# 2- #Función para ver cuantas veces un cliente paga antes de la hora de visita estimada y cuantas veces despues del horario estimado
+DROP FUNCTION IF EXISTS control_visitas;
+DELIMITER $$
+CREATE FUNCTION control_visitas (cli INT, estado VARCHAR(10))
+RETURNS INT
+READS SQL DATA
+BEGIN
+    DECLARE output INT;
+    DECLARE h_teorica TIME;
+	SET h_teorica = (SELECT c.hora_visita 
+					 FROM clientes AS c
+					 WHERE id = cli);
+    SET output =              
+	CASE 
+		WHEN estado ="ANTES" THEN (SELECT COUNT(d.id) FROM detalles AS d WHERE h_teorica < d.hora_p AND id_prestamo IN (SELECT p.id FROM prestamos AS p WHERE id_cliente = cli))
+		WHEN estado="DESPUES" THEN (SELECT COUNT(d.id) FROM detalles AS d WHERE h_teorica < d.hora_p AND id_prestamo IN (SELECT p.id FROM prestamos AS p WHERE id_cliente = cli))
+	END;
+    RETURN output;
+END $$ 
+DELIMITER ;
+
+*/
