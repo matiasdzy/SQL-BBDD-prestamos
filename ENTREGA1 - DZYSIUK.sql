@@ -114,32 +114,32 @@ CREATE TABLE usuarios (
 INSERT INTO `clientes` VALUES ('1', ' Nicolas', 'Arbeta', '45167879', '35964954', '42575719', 'BEREGUESTEIN ', '125', '8', 'AVELLANEDA', '188', '10', '23:39:00', 'REJAS NEGRAS' );
 INSERT INTO `clientes` VALUES ('2', ' Celeste', 'Escobar', '54679340', '13187329', '42120055', 'ALBERTI ', '696', '2', 'CORONEL BRANDSEN', '307', '7', '03:38:00', 'PREGUNTAR POR MARIO' );
 INSERT INTO `clientes` VALUES ('3', ' Mabel', 'Flamini', '32151651', '14605758', '42122764', 'MORENO ', '81', '4', 'CAMPANA', '164', '9', '05:07:00', 'CARNICERIA' );
-INSERT INTO `clientes` VALUES ('4', ' Adrian', 'Guillen', '40696260', '37333084', '42575679', 'PTE. PERON ', '297', '5', 'VALENTIN ALSINA', '914', '10', '03:47:00', 'NULL' );
-INSERT INTO `clientes` VALUES ('5', ' Hernan', 'Lago', '40312929', '12524289', '42525610', 'AVDA. PEDRO PEREYRA ', '79', '1', 'LAPRIDA', '506', '10', '05:30:00', 'NULL' );
+INSERT INTO `clientes` VALUES ('4', ' Adrian', 'Guillen', '40696260', '37333084', '42575679', 'PTE. PERON ', '297', '5', 'VALENTIN ALSINA', '914', '10', '03:47:00', NULL );
+INSERT INTO `clientes` VALUES ('5', ' Hernan', 'Lago', '40312929', '12524289', '42525610', 'AVDA. PEDRO PEREYRA ', '79', '1', 'LAPRIDA', '506', '10', '05:30:00', NULL );
 INSERT INTO `clientes` VALUES ('6', ' Daniel', 'Martearena', '40368326', '41575750', '42531817', 'LOPE DE VEGA ', '812', '11', 'BOCA DE ATENCION MONTE CASTRO', '856', '5', '08:17:00', 'LUGAR DE TRABAJO' );
 INSERT INTO `clientes` VALUES ('7', ' Graciela', 'Navarro', '31897183', '25223776', '42808094', 'SANTA ROSA ', '194', '14', 'USHUAIA', '720', '7', '00:05:00', 'AVISAR ANTES' );
-INSERT INTO `clientes` VALUES ('8', ' Carlos', 'Ojeda', '23626470', '1246092', '42575728', 'SANTA ROSA ', '522', '9', 'CORDOBA', '734', '3', '18:52:00', 'NULL' );
-INSERT INTO `clientes` VALUES ('9', ' Carolina', 'Pasos', '34308731', '34876911', '42541576', 'JUAN B. JUSTO ', '806', '9', 'MENDOZA', '350', '4', '08:03:00', 'NULL' );
+INSERT INTO `clientes` VALUES ('8', ' Carlos', 'Ojeda', '23626470', '1246092', '42575728', 'SANTA ROSA ', '522', '9', 'CORDOBA', '734', '3', '18:52:00', NULL );
+INSERT INTO `clientes` VALUES ('9', ' Carolina', 'Pasos', '34308731', '34876911', '42541576', 'JUAN B. JUSTO ', '806', '9', 'MENDOZA', '350', '4', '08:03:00', NULL );
 INSERT INTO `clientes` VALUES ('10', ' Viviana', 'Pisano', '34484594', '19506819', '42123277', 'CORDOBA ', '829', '4', 'MIRANDA', '920', '5', '22:00:00', 'CASA CON MUCHOS PERROS' );
 INSERT INTO `clientes` VALUES ('11', ' Dario', 'Salinas', '44636874', '43081635', '42246026', 'VICEALTE O CONNOR ', '321', '3', 'SAN CARLOS DE BARILOCHE', '948', '1', '22:37:00', 'AUTO GRIS AFUERA' );
 INSERT INTO `clientes` VALUES ('12', ' Sandra', 'Silva', '53756599', '26328692', '42532696', 'SAN MARTIN ', '808', '6', 'ROSARIO', '31', '1', '12:31:00', 'FRENTE A CASA DE DOS PISOS' );
 INSERT INTO `clientes` VALUES ('13', ' Marcela', 'Soler', '19139881', '28470578', '42265215', 'SANTIAGO DEL ESTERO ', '659', '6', 'SAN MIGUEL DE TUCUMAN', '626', '6', '23:23:00', 'PREGUNTAR POR MIRTA' );
-INSERT INTO `clientes` VALUES ('14', ' Martin', 'Soto', '28334334', '46742173', '42518982', 'BELGRANO ', '17', '2', 'MONTEROS', '453', '3', '12:21:00', 'NULL' );
-INSERT INTO `clientes` VALUES ('15', ' Claudio', 'Volpi', '31633441', '2489900', '42532906', 'PERITO MORENO', '459', '8', 'JOSE HERNANDEZ', '612', '8', '13:32:00', 'NULL' );
+INSERT INTO `clientes` VALUES ('14', ' Martin', 'Soto', '28334334', '46742173', '42518982', 'BELGRANO ', '17', '2', 'MONTEROS', '453', '3', '12:21:00', NULL );
+INSERT INTO `clientes` VALUES ('15', ' Claudio', 'Volpi', '31633441', '2489900', '42532906', 'PERITO MORENO', '459', '8', 'JOSE HERNANDEZ', '612', '8', '13:32:00', NULL );
 INSERT INTO `clientes` VALUES ('16', 'Juan', 'Domingo', '49753991', '35578633', '47811245', 'PUEYRREDON', '342', '7', 'FORMOSA', '858', '2', '10:39:00', 'AUTO ROJO' );
 
 #Inserción de datos en tabla capitales
 
 INSERT INTO `capitales` VALUES ('1', ' Daniel', 'Escobar', '45167879', '790000', '23118344', '42575719', 'AVDA. PEDRO PEREYRA ', '781', '8', 'SANTA ROSA ', '349', '3', '23:39:00', 'MANTENER INFORMADO' );
-INSERT INTO `capitales` VALUES ('2', ' Nicolas', 'Martearena', '54679340', '150000', '30909028', '42120055', 'ALBERTI ', '127', '2', 'CORONEL BRANDSEN', '709', '1', '03:38:00', 'NULL' );
+INSERT INTO `capitales` VALUES ('2', ' Nicolas', 'Martearena', '54679340', '150000', '30909028', '42120055', 'ALBERTI ', '127', '2', 'CORONEL BRANDSEN', '709', '1', '03:38:00', NULL );
 INSERT INTO `capitales` VALUES ('3', ' Mabel', 'Guillen', '32151651', '350000', '28945124', '42122764', 'BEREGUESTEIN ', '852', '4', 'CAMPANA', '978', '1', '05:07:00', 'CARNICERIA' );
-INSERT INTO `capitales` VALUES ('4', ' Carlos', 'Arbeta', '40696260', '400000', '44981128', '42575679', 'PTE. PERON ', '930', '5', 'VALENTIN ALSINA', '273', '8', '03:47:00', 'NULL' );
+INSERT INTO `capitales` VALUES ('4', ' Carlos', 'Arbeta', '40696260', '400000', '44981128', '42575679', 'PTE. PERON ', '930', '5', 'VALENTIN ALSINA', '273', '8', '03:47:00', NULL );
 INSERT INTO `capitales` VALUES ('5', ' Adrian', 'Ojeda', '40312929', '100000', '6467891', '42525610', 'BOCA DE ATENCION MONTE CASTRO', '289', '1', 'LAPRIDA', '983', '4', '05:30:00', 'PREGUNTAR POR MARIO' );
-INSERT INTO `capitales` VALUES ('6', ' Daniel', 'Pisano', '40368326', '600000', '1498839', '42531817', 'LOPE DE VEGA ', '147', '11', 'AVELLANEDA', '760', '10', '08:17:00', 'NULL' );
-INSERT INTO `capitales` VALUES ('7', ' Adrian', 'Navarro', '31897183', '500000', '28797806', '42808094', 'MORENO ', '538', '14', 'USHUAIA', '597', '2', '00:05:00', 'NULL' );
+INSERT INTO `capitales` VALUES ('6', ' Daniel', 'Pisano', '40368326', '600000', '1498839', '42531817', 'LOPE DE VEGA ', '147', '11', 'AVELLANEDA', '760', '10', '08:17:00', NULL );
+INSERT INTO `capitales` VALUES ('7', ' Adrian', 'Navarro', '31897183', '500000', '28797806', '42808094', 'MORENO ', '538', '14', 'USHUAIA', '597', '2', '00:05:00', NULL );
 INSERT INTO `capitales` VALUES ('8', ' Carlos', 'Pasos', '23626470', '800000', '6093367', '42575728', 'SANTA ROSA ', '459', '9', 'JUAN B. JUSTO ', '11', '10', '18:52:00', 'LUGAR DE TRABAJO' );
-INSERT INTO `capitales` VALUES ('9', ' Celeste', 'Flamini', '34308731', '100000', '3557381', '42541576', 'MENDOZA', '252', '9', 'MIRANDA', '578', '3', '08:03:00', 'NULL' );
-INSERT INTO `capitales` VALUES ('10', ' Viviana', 'Lago', '34484594', '200000', '38763720', '42123277', 'CORDOBA ', '505', '4', 'CORDOBA', '945', '8', '22:00:00', 'NULL' );
+INSERT INTO `capitales` VALUES ('9', ' Celeste', 'Flamini', '34308731', '100000', '3557381', '42541576', 'MENDOZA', '252', '9', 'MIRANDA', '578', '3', '08:03:00', NULL );
+INSERT INTO `capitales` VALUES ('10', ' Viviana', 'Lago', '34484594', '200000', '38763720', '42123277', 'CORDOBA ', '505', '4', 'CORDOBA', '945', '8', '22:00:00', NULL );
 
 #Inserción de datos en tabla forma de pago
 INSERT INTO modo_pagos VALUES 
@@ -148,32 +148,32 @@ INSERT INTO modo_pagos VALUES
 
 #Inserción de datos en tabla prestamos
 
-INSERT INTO `prestamos` VALUES ('1', '2', '5', '1', '15000', '30', '3', '0', 'NULL' );
-INSERT INTO `prestamos` VALUES ('2', '3', '6', '1', '15000', '20', '5', '0', 'NULL' );
-INSERT INTO `prestamos` VALUES ('3', '8', '11', '1', '50000', '40', '28', '0', 'NULL' );
+INSERT INTO `prestamos` VALUES ('1', '2', '5', '1', '15000', '30', '3', '0', NULL );
+INSERT INTO `prestamos` VALUES ('2', '3', '6', '1', '15000', '20', '5', '0', NULL );
+INSERT INTO `prestamos` VALUES ('3', '8', '11', '1', '50000', '40', '28', '0', NULL );
 INSERT INTO `prestamos` VALUES ('4', '1', '4', '2', '40000', '30', '20', '1', 'RETIRAR TARJETA' );
-INSERT INTO `prestamos` VALUES ('5', '4', '15', '2', '100000', '30', '10', '0', 'NULL' );
+INSERT INTO `prestamos` VALUES ('5', '4', '15', '2', '100000', '30', '10', '0', NULL );
 INSERT INTO `prestamos` VALUES ('6', '4', '2', '1', '20000', '30', '30', '1', 'RETIRAR TARJETA' );
-INSERT INTO `prestamos` VALUES ('7', '8', '11', '2', '30000', '40', '20', '0', 'NULL' );
-INSERT INTO `prestamos` VALUES ('8', '1', '4', '1', '15000', '30', '15', '0', 'NULL' );
+INSERT INTO `prestamos` VALUES ('7', '8', '11', '2', '30000', '40', '20', '0', NULL );
+INSERT INTO `prestamos` VALUES ('8', '1', '4', '1', '15000', '30', '15', '0', NULL );
 INSERT INTO `prestamos` VALUES ('9', '5', '8', '2', '20000', '30', '20', '1', 'RETIRAR TARJETA' );
-INSERT INTO `prestamos` VALUES ('10', '6', '9', '1', '70000', '30', '20', '0', 'NULL' );
+INSERT INTO `prestamos` VALUES ('10', '6', '9', '1', '70000', '30', '20', '0', NULL );
 
 #Inserción de datos en tabla detalles
 
-INSERT INTO `detalles` VALUES ('1', '1', '0', '1', '2016-01-04', '1', '1', 'NULL', '23:39:00', 'NULL' );
-INSERT INTO `detalles` VALUES ('2', '1', '0', '2', '2016-04-20', '1', '1', 'NULL', '03:38:00', 'NULL' );
-INSERT INTO `detalles` VALUES ('3', '2', '1', '5', '2015-10-18', '1', '1', 'NULL', '05:07:00', 'NULL' );
+INSERT INTO `detalles` VALUES ('1', '1', '0', '1', '2016-01-04', '1', '1', NULL, '23:39:00', NULL );
+INSERT INTO `detalles` VALUES ('2', '1', '0', '2', '2016-04-20', '1', '1', NULL, '03:38:00', NULL );
+INSERT INTO `detalles` VALUES ('3', '2', '1', '5', '2015-10-18', '1', '1', NULL, '05:07:00', NULL );
 INSERT INTO `detalles` VALUES ('4', '3', '0', '18', '2016-07-28', '0', '0', '2016-08-05', '03:47:00', 'RETIRAR TARJETA' );
-INSERT INTO `detalles` VALUES ('5', '8', '0', '8', '2016-12-26', '1', '1', 'NULL', '05:30:00', 'NULL' );
+INSERT INTO `detalles` VALUES ('5', '8', '0', '8', '2016-12-26', '1', '1', NULL, '05:30:00', NULL );
 INSERT INTO `detalles` VALUES ('6', '6', '1', '22', '2017-02-07', '0', '0', '2017-02-17', '08:17:00', 'RETIRAR TARJETA' );
-INSERT INTO `detalles` VALUES ('7', '10', '0', '15', '2016-05-04', '1', '1', 'NULL', '00:05:00', 'NULL' );
-INSERT INTO `detalles` VALUES ('8', '4', '1', '11', '2016-09-08', '1', '1', 'NULL', '18:52:00', 'NULL' );
+INSERT INTO `detalles` VALUES ('7', '10', '0', '15', '2016-05-04', '1', '1', NULL, '00:05:00', NULL );
+INSERT INTO `detalles` VALUES ('8', '4', '1', '11', '2016-09-08', '1', '1', NULL, '18:52:00', NULL );
 INSERT INTO `detalles` VALUES ('9', '4', '1', '12', '2016-10-08', '0', '0', '2016-10-18', '08:03:00', 'RETIRAR TARJETA' );
-INSERT INTO `detalles` VALUES ('10', '7', '0', '7', '2015-11-27', '1', '1', 'NULL', '22:00:00', 'NULL' );
-INSERT INTO `detalles` VALUES ('11', '5', '1', '8', '2017-03-26', '1', '1', 'NULL', '18:52:00', 'NULL' );
-INSERT INTO `detalles` VALUES ('12', '9', '0', '9', '2017-02-05', '1', '1', 'NULL', '05:07:00', 'NULL' );
-INSERT INTO `detalles` VALUES ('13', '9', '0', '10', '2017-06-18', '0', '0', '2017-06-28', '03:38:00', 'NULL' );
+INSERT INTO `detalles` VALUES ('10', '7', '0', '7', '2015-11-27', '1', '1', NULL, '22:00:00', NULL );
+INSERT INTO `detalles` VALUES ('11', '5', '1', '8', '2017-03-26', '1', '1', NULL, '18:52:00', NULL );
+INSERT INTO `detalles` VALUES ('12', '9', '0', '9', '2017-02-05', '1', '1', NULL, '05:07:00', NULL );
+INSERT INTO `detalles` VALUES ('13', '9', '0', '10', '2017-06-18', '0', '0', '2017-06-28', '03:38:00', NULL );
 
 #Inserción de datos en tabla roles
 INSERT INTO roles VALUES 
@@ -566,3 +566,45 @@ GRANT SELECT, INSERT, UPDATE ON *.* TO 'administrador'@'localhost';			#Puede lee
 USE mysql;
 SELECT * FROM USER WHERE user = 'administrador';
 */
+
+#----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#--DESAFIO SENTENCIAS TCL--
+#Alumno: DZYSIUK, Matías Lucas
+#Última modificación: 25/04/2022
+
+/*
+#Primera tabla clientes
+START TRANSACTION;
+DELETE FROM
+	prestamos_personales.clientes
+WHERE
+	id > 13;										#Se eliminan los ultimos 3 registros.
+SELECT * FROM prestamos_personales.clientes;		#Observamos la eliminación.
+#ROLLBACK;											#Volvemos atrás.
+#SELECT * FROM prestamos_personales.clientes;		#Observamos que no se eliminó nada.
+#COMMIT;
+
+#----------Sentencia para re-insertar----------
+#INSERT INTO `clientes` VALUES ('14', ' Martin', 'Soto', '28334334', '46742173', '42518982', 'BELGRANO ', '17', '2', 'MONTEROS', '453', '3', '12:21:00', NULL );
+#INSERT INTO `clientes` VALUES ('15', ' Claudio', 'Volpi', '31633441', '2489900', '42532906', 'PERITO MORENO', '459', '8', 'JOSE HERNANDEZ', '612', '8', '13:32:00', NULL );
+#INSERT INTO `clientes` VALUES ('16', 'Juan', 'Domingo', '49753991', '35578633', '47811245', 'PUEYRREDON', '342', '7', 'FORMOSA', '858', '2', '10:39:00', 'AUTO ROJO' );
+
+#Segunda tabla clientes
+START TRANSACTION;
+#Ingresamos primer lote
+INSERT INTO `clientes` VALUES ('17', 'Lucas', 'Martinez', '54753258', '36678633', '54871245', 'PUEYRREDON', '587', '7', 'CORDOBA', '332', '1', '11:20:00', 'AUTO ROJO' );
+INSERT INTO `clientes` VALUES ('18', 'Silvia', 'Olivera', '22752292', '35249633', '42581345', 'HERNANDEZ', '632', '6', 'MIRANDA', '758', '1', '08:32:00', 'PERROS GRANDES' );
+INSERT INTO `clientes` VALUES ('19', 'Teresa', 'Gonzalez', '42543992', '36524533', '32112245', 'MIRANDA', '996', '10', 'ALEMANIA', '213', '6', '14:30:00', 'ARBUSTOS' );
+INSERT INTO `clientes` VALUES ('20', 'Pedro', 'Sanchez', '57452921', '65478633', '42578125', 'LUGABO', '114', '1', 'SAN MARTIN', '456', '9', '18:39:00', 'REJA NEGRA' );
+SAVEPOINT LOTE_1_4;
+
+#Ingresamos segundo lote
+INSERT INTO `clientes` VALUES ('21', ' Hernan', 'Navarro', '40312929', '1246092', '62125620', 'AVDA. PEREYRA ', '78', '1', 'USHUAIA', '506', '10', '06:30:00', NULL );
+INSERT INTO `clientes` VALUES ('22', ' Daniel', 'Ojeda', '31857183''40368326', '22475850', '42531817', 'LOPEZ DE VEGAS ', '254', '11', 'MONTE CASTRO', '866', '2', '14:17:00', 'LUGAR DE TRABAJO' );
+INSERT INTO `clientes` VALUES ('23', ' Graciela', 'Lago', '40368326', '25563776', '56708094', 'JM ROSAS', '194', '45', 'LAPRIDA', '720', '7', '10:05:00', 'AVISAR ANTES' );
+INSERT INTO `clientes` VALUES ('24', ' Carlos', 'Martearena', '23626470', '12824289', '85245728', 'SANTA', '522', '6', 'CORDOBA', '734', '3', '09:52:00', NULL );
+SAVEPOINT LOTE_5_8;
+
+#Eliminamos el primer SAVEPOINT
+#RELEASE SAVEPOINT LOTE_1_4;
+
